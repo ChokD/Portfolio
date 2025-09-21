@@ -56,7 +56,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
       title: "UX/UI Design",
       description: "A project planning and UI/UX design process carried out using Figma.",
       image: "src/images/UXUI.png",
-      technologies: ["Roblox Studio", "Lua"],
+      technologies: ["Figma"],
       liveLink: "#",
       githubLink: "#",
       featured: false

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, ArrowDown } from 'lucide-react';
 
 interface HeroProps {

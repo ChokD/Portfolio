@@ -11,19 +11,19 @@ export default function Certificates({ isDarkMode }: CertificatesProps) {
       title: "Introduction to Programming with Python",
       issuer: "Samsung",
       date: "Jul, 2025",
-      image: "src/public/images/THANARUT RUNGRUANGWISETCHAI - 2025-07-08_page-0001.jpg",
+      image: "public/images/THANARUT RUNGRUANGWISETCHAI - 2025-07-08_page-0001.jpg",
     },
     {
       title: "Customer Service with Python: Build a Chatbot using ChatGPT",
       issuer: "Coursera",
       date: "Apr, 2025",
-      image: "src/public/images/Coursera UENCHXP85LLL_page-0001.jpg",
+      image: "public/images/Coursera UENCHXP85LLL_page-0001.jpg",
     },
     {
       title: "Basic Cybersecurity",
       issuer: "NCSA Mooc Cyber-Learning",
       date: "Oct, 2024",
-      image: "src/public/images/certificate-1650707266_page-0001.jpg",
+      image: "public/images/certificate-1650707266_page-0001.jpg",
       link: "#"
     }
   ];

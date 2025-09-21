@@ -7,9 +7,9 @@ interface ContactProps {
 
 export default function Contact({ isDarkMode }: ContactProps) {
   const contactInfo = [
-    { icon: Mail, title: 'Email', value: 'thanarut.rung@gmail.com', link: '#' },
+    { icon: Mail, title: 'Email', value: 'thanarut.rung@gmail.com', link: '#contact' },
     { icon: Phone, title: 'Phone', value: '+66 99-254-7017', link: 'tel:+66992547017' },
-    { icon: MapPin, title: 'Location', value: 'Bangkok, Thailand', link: '#' },
+    { icon: MapPin, title: 'Location', value: 'Bangkok, Thailand', link: '#contact' },
   ];
 
   const socialLinks = [

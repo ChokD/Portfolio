@@ -43,16 +43,6 @@ export default function Hero({ isDarkMode }: HeroProps) {
               >
                 View My Work
               </button>
-              <button 
-                onClick={() => scrollToSection('#contact')}
-                className={`px-8 py-4 border-2 rounded-lg font-medium transition-all duration-200 ${
-                  isDarkMode
-                    ? 'border-blue-400 text-blue-400 hover:bg-blue-400/10'
-                    : 'border-blue-400 text-blue-600 hover:bg-blue-50'
-                }`}
-              >
-                Get In Touch
-              </button>
             </div>
 
             <div className="flex space-x-6">

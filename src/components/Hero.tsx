@@ -62,7 +62,7 @@ export default function Hero({ isDarkMode }: HeroProps) {
           <div className="flex justify-center lg:justify-end">
             <div className="w-80 h-96 rounded-2xl shadow-lg overflow-hidden">
               <img 
-                src="src\images\thanarut.JPG" 
+                src="src/public/images/thanarut.JPG" 
                 alt="Thanarut Rungruangwisetchai"
                 className="w-full h-full object-cover"
               />

@@ -10,7 +10,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     {
       title: "MealVault",
       description: "A comprehensive food discovery platform that helps users find recipes based on available ingredients. Features include AI-powered food recommendations, ingredient-based search, and a community-driven approach to meal planning.",
-      image: "src/images/Mealvault.png",
+      image: "src/public/images/Mealvault.png",
       technologies: ["HTML","CSS","JavaScript","React", "Node.js", "AI", "Food API"],
       liveLink: "#",
       githubLink: "#",
@@ -19,7 +19,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     {
       title: "SuperVisionX",
       description: "A deep learning–based waste classification system built with TensorFlow and MobileNetV2. Features include image preprocessing, class label correction, and training enhancements using callbacks such as EarlyStopping and ModelCheckpoint. The system helps identify waste categories more accurately, supporting efficient recycling and waste management.",
-      image: "src/images/SuperVision.png",
+      image: "src/public/images/SuperVision.png",
       technologies: ["Python","TensorFlow","Keras","MobileNetV2","Matplotlib"],
       liveLink: "#",
       githubLink: "#",
@@ -28,7 +28,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     {
       title: "Kanji Game with AI",
       description: "A Kanji and Japanese script learning game built using Python and Tkinter. Features include multiple levels for Kanji, Hiragana, and Katakana, AI-generated hints using Gemini 1.5-flash, timed quizzes, score tracking, and interactive feedback. The game incorporates video and image elements, full-screen support, and user-friendly navigation to enhance learning and engagement.",
-      image: "src/images/KanjiGame.png",
+      image: "src/public/images/KanjiGame.png",
       technologies: ["Python","Google Gemini API","Tkinter"],
       liveLink: "#",
       githubLink: "#",
@@ -37,7 +37,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     {
       title: "BU Open House website",
       description: "A simulated university open house website built with HTML, CSS, and JavaScript. Features include schedule display, speaker info, workshop overview, gallery, and a mock registration page, designed to demonstrate website structure and interactive elements.",
-      image: "src/images/BU.png",
+      image: "src/public/images/BU.png",
       technologies: ["HTML","CSS","JavaScript"],
       liveLink: "#",
       githubLink: "#",
@@ -46,7 +46,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     {
       title: "Project BU",
       description: "A university simulation game built in Roblox.",
-      image: "src/images/roblox.png",
+      image: "src/public/images/roblox.png",
       technologies: ["Roblox Studio", "Lua"],
       liveLink: "#",
       githubLink: "#",
@@ -55,7 +55,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     {
       title: "UX/UI Design",
       description: "A project planning and UI/UX design process carried out using Figma.",
-      image: "src/images/UXUI.png",
+      image: "src/public/images/UXUI.png",
       technologies: ["Figma"],
       liveLink: "#",
       githubLink: "#",

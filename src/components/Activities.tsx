@@ -8,17 +8,17 @@ export default function Activities({ isDarkMode }: ActivitiesProps) {
   const activities = [
     {
       title: "International Program KAIT x BU 2025",
-      image: "src/images/KAITxBU.JPG",
+      image: "src/public/images/KAITxBU.JPG",
       color: "from-purple-500 to-purple-700"
     },
     {
       title: "BU Loy Krathong 2024",
-      image: "src/images/LoyKrathong.png",
+      image: "src/public/images/LoyKrathong.png",
       color: "from-blue-500 to-blue-700"
     },
     {
       title: "Orientation BUITI 2023",
-      image: "src/images/Orientation.jpg",
+      image: "src/public/images/Orientation.jpg",
       color: "from-green-500 to-green-700"
     }
   ];

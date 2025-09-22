@@ -25,7 +25,6 @@ export default function Certificates({ isDarkMode }: CertificatesProps) {
       issuer: "NCSA Mooc Cyber-Learning",
       date: "Oct, 2024",
       image: "/images/certificate-1650707266_page-0001.jpg",
-      link: "#"
     }
   ];
 
@@ -68,11 +67,6 @@ export default function Certificates({ isDarkMode }: CertificatesProps) {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  {certificate.link && (
-                    <span className="absolute top-4 right-4 text-white/90">
-                      <ExternalLink className="w-6 h-6" />
-                    </span>
-                  )}
                 </div>
               </button>
 

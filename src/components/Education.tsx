@@ -51,7 +51,7 @@ export default function Education({ isDarkMode }: EducationProps) {
           {/* Timeline Items */}
           <div className="space-y-16">
             {educationData.map((item, index) => (
-              <div key={index} className={`relative flex items-center ${item.side === 'left' ? 'justify-start' : 'justify-end'} md:justify-center`}> 
+              <div key={index} className={`relative flex items-center ${item.side === 'left' ? 'justify-start' : 'justify-end'}`}> 
                 {/* Timeline Node */}
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-500 rounded-full z-10"></div>
                 

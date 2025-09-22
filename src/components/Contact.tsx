@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin } from 'lucide-react';
 
 interface ContactProps {
   isDarkMode: boolean;
@@ -8,7 +8,6 @@ export default function Contact({ isDarkMode }: ContactProps) {
   const contactInfo = [
     { icon: Mail, title: 'Email', value: 'thanarut.rung@gmail.com', link: '#contact' },
     { icon: Phone, title: 'Phone', value: '+66 99-254-7017', link: 'tel:+66992547017' },
-    { icon: MapPin, title: 'Location', value: 'Bangkok, Thailand', link: '#contact' },
   ];
 
   const socialLinks = [
@@ -25,11 +24,11 @@ export default function Contact({ isDarkMode }: ContactProps) {
       id="contact"
       className={`transition-colors duration-300 ${
         isDarkMode ? 'bg-gray-800' : 'bg-slate-50'
-      } py-16`} // ลด padding บน/ล่าง
+      } py-12`} // ลด padding บน/ล่าง
     >
       <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2
             className={`text-3xl sm:text-4xl font-bold mb-4 ${
               isDarkMode ? 'text-white' : 'text-slate-900'
@@ -37,11 +36,18 @@ export default function Contact({ isDarkMode }: ContactProps) {
           >
             Contact
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-sky-600 mx-auto mb-4"></div>
+          <h4
+              className={`text-lg font-semibold mb-4 ${
+                isDarkMode ? 'text-white' : 'text-slate-900'
+              }`}
+            >
+              Get In Touch
+            </h4>
         </div>
 
         {/* Get In Touch + Social Links Centered */}
-        <div className="flex flex-col items-center space-y-8">
+        <div className="flex flex-col items-center space-y-6">
           {/* Get In Touch */}
           <div className="w-full max-w-md">
             <div className="space-y-4">
@@ -75,13 +81,6 @@ export default function Contact({ isDarkMode }: ContactProps) {
 
           {/* Follow Me */}
           <div className="w-full max-w-md text-center">
-            <h4
-              className={`text-lg font-semibold mb-4 ${
-                isDarkMode ? 'text-white' : 'text-slate-900'
-              }`}
-            >
-              Follow Me
-            </h4>
             <div className="flex justify-center space-x-4">
               {socialLinks.map((social, index) => (
                 <a

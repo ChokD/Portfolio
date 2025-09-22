@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ImageModal from './ImageModal';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 interface ProjectsProps {
@@ -66,16 +67,28 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSrc, setModalSrc] = useState('');
+  const [modalAlt, setModalAlt] = useState('');
+
+  const openImage = (src: string, alt: string) => {
+    setModalSrc(src);
+    setModalAlt(alt);
+    setIsModalOpen(true);
+  };
+
+  const closeImage = () => setIsModalOpen(false);
+
   return (
     <section id="projects" className={`py-20 transition-colors duration-300 ${
-      isDarkMode ? 'bg-gray-900' : 'bg-white'
+      isDarkMode ? 'bg-gray-900' : 'bg-sky-50'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-slate-900'
           }`}>Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-sky-600 mx-auto mb-8"></div>
         </div>
 
         {/* Featured Projects */}
@@ -83,21 +96,23 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
           {featuredProjects.map((project, index) => (
             <div 
               key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+              className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
             >
-              <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
+              <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
+                <button onClick={() => openImage(project.image, project.title)} className="block w-full text-left">
+                  <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                </button>
               </div>
               
-              <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+              <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
                 <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${
                   isDarkMode ? 'text-white' : 'text-slate-900'
                 }`}>{project.title}</h3>
@@ -107,12 +122,12 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, techIndex) => (
-                    <span 
+                  <span 
                       key={techIndex}
-                      className={`px-3 py-1 text-sm rounded-full font-medium ${
+                    className={`px-3 py-1 text-sm rounded-full font-medium ${
                         isDarkMode 
-                          ? 'bg-teal-900 text-teal-300' 
-                          : 'bg-teal-100 text-teal-700'
+                          ? 'bg-sky-900/40 text-sky-300' 
+                          : 'bg-sky-100 text-sky-700'
                       }`}
                     >
                       {tech}
@@ -137,13 +152,15 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
                   isDarkMode ? 'bg-gray-800' : 'bg-slate-50'
                 }`}
               >
-                <div className="relative group overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
+                <button onClick={() => openImage(project.image, project.title)} className="block w-full text-left">
+                  <div className="relative group overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                </button>
                 
                 <div className="p-6">
                   <h4 className={`text-xl font-bold mb-3 ${
@@ -173,6 +190,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
           </div>
         </div>
       </div>
+      <ImageModal isOpen={isModalOpen} src={modalSrc} alt={modalAlt} onClose={closeImage} />
     </section>
   );
 }

@@ -42,22 +42,22 @@ export default function Navigation({ activeSection, isDarkMode, toggleDarkMode }
       isScrolled 
         ? isDarkMode 
           ? 'bg-gray-900/90 backdrop-blur-md shadow-lg' 
-          : 'bg-white/90 backdrop-blur-md shadow-lg'
+          : 'bg-sky-50/90 backdrop-blur-md shadow-lg'
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className={`font-bold text-xl ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>Thanarut.R</div>
+          <div className={`font-bold text-xl ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Thanarut.R</div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-colors duration-200 hover:text-purple-600 ${
+                className={`transition-colors duration-200 hover:text-sky-600 ${
                   activeSection === item.href.slice(1) 
-                    ? 'text-purple-600 font-medium' 
+                    ? 'text-sky-600 font-medium' 
                     : isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}
               >
@@ -79,7 +79,7 @@ export default function Navigation({ activeSection, isDarkMode, toggleDarkMode }
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
             <button
               onClick={toggleDarkMode}
               className={`p-2 rounded-lg transition-colors duration-200 ${
@@ -92,7 +92,7 @@ export default function Navigation({ activeSection, isDarkMode, toggleDarkMode }
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${isDarkMode ? 'text-gray-300 hover:text-purple-400' : 'text-gray-700 hover:text-purple-600'}`}
+              className={`${isDarkMode ? 'text-gray-300 hover:text-sky-400' : 'text-gray-700 hover:text-sky-600'}`}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -103,15 +103,15 @@ export default function Navigation({ activeSection, isDarkMode, toggleDarkMode }
         {isMenuOpen && (
           <div className="md:hidden">
             <div className={`px-2 pt-2 pb-3 space-y-1 backdrop-blur-md rounded-lg shadow-lg mt-2 ${
-              isDarkMode ? 'bg-gray-800/95' : 'bg-white/95'
+              isDarkMode ? 'bg-gray-800/95' : 'bg-sky-50/95'
             }`}>
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`block px-3 py-2 w-full text-left transition-colors duration-200 hover:text-purple-600 ${
+                  className={`block px-3 py-2 w-full text-left transition-colors duration-200 hover:text-sky-600 ${
                     activeSection === item.href.slice(1) 
-                      ? 'text-purple-600 font-medium' 
+                      ? 'text-sky-600 font-medium' 
                       : isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}
                 >

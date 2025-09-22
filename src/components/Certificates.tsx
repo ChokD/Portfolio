@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, ExternalLink } from 'lucide-react';
+import ImageModal from './ImageModal';
 
 interface CertificatesProps {
   isDarkMode: boolean;
@@ -28,15 +29,27 @@ export default function Certificates({ isDarkMode }: CertificatesProps) {
     }
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSrc, setModalSrc] = useState('');
+  const [modalAlt, setModalAlt] = useState('');
+
+  const openImage = (src: string, alt: string) => {
+    setModalSrc(src);
+    setModalAlt(alt);
+    setIsModalOpen(true);
+  };
+
+  const closeImage = () => setIsModalOpen(false);
+
   return (
-    <section id="certificates" className={`py-28 transition-colors duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <section id="certificates" className={`py-28 transition-colors duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-sky-50'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className={`text-3xl sm:text-4xl font-extrabold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
             Certificates
           </h2>
-          <div className="w-28 h-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+          <div className="w-28 h-1 rounded-full bg-gradient-to-r from-sky-400 to-sky-600 mx-auto"></div>
         </div>
 
         {/* Certificates Grid */}
@@ -47,31 +60,28 @@ export default function Certificates({ isDarkMode }: CertificatesProps) {
               className={`rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={certificate.image}
-                  alt={certificate.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                {certificate.link && (
-                  <a
-                    href={certificate.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute top-4 right-4 text-white hover:text-purple-400 transition-colors"
-                  >
-                    <ExternalLink className="w-6 h-6" />
-                  </a>
-                )}
-              </div>
+              <button onClick={() => openImage(certificate.image, certificate.title)} className="block w-full text-left">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={certificate.image}
+                    alt={certificate.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  {certificate.link && (
+                    <span className="absolute top-4 right-4 text-white/90">
+                      <ExternalLink className="w-6 h-6" />
+                    </span>
+                  )}
+                </div>
+              </button>
 
               {/* Content */}
               <div className="p-6">
                 <h3 className={`text-lg md:text-xl font-semibold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                   {certificate.title}
                 </h3>
-                <p className={`text-sm md:text-base font-medium mb-3 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                <p className={`text-sm md:text-base font-medium mb-3 ${isDarkMode ? 'text-sky-300' : 'text-sky-700'}`}>
                   {certificate.issuer}
                 </p>
                 <div className="flex items-center text-sm md:text-base text-gray-500 dark:text-gray-400">
@@ -83,6 +93,7 @@ export default function Certificates({ isDarkMode }: CertificatesProps) {
           ))}
         </div>
       </div>
+      <ImageModal isOpen={isModalOpen} src={modalSrc} alt={modalAlt} onClose={closeImage} />
     </section>
   );
 }

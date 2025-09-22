@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'dark bg-gray-900' : 'bg-white'}`}>
+    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'dark bg-gray-900' : 'bg-sky-50'}`}>
       <Navigation activeSection={activeSection} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <Hero isDarkMode={isDarkMode} />

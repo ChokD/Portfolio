@@ -29,7 +29,7 @@ export default function Skills({ isDarkMode }: SkillsProps) {
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
             isDarkMode ? 'text-white' : 'text-gray-800'
           }`}>Skills & Technologies</h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-sky-500 mx-auto mb-8"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -45,7 +45,7 @@ export default function Skills({ isDarkMode }: SkillsProps) {
                 {category.skills.map((skill, skillIndex) => (
                   <span 
                     key={skillIndex}
-                    className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white rounded-full text-sm font-medium"
+                    className="px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 text-white rounded-full text-sm font-medium"
                   >
                     {skill}
                   </span>

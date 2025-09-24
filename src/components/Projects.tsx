@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ImageModal from './ImageModal';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import Reveal from './Reveal';
 
 interface ProjectsProps {
   isDarkMode: boolean;
@@ -85,57 +86,62 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
-            isDarkMode ? 'text-white' : 'text-slate-900'
-          }`}>Projects</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-sky-600 mx-auto mb-8"></div>
+          <Reveal>
+            <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
+              isDarkMode ? 'text-white' : 'text-slate-900'
+            }`}>Projects</h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-sky-600 mx-auto mb-8"></div>
+          </Reveal>
         </div>
 
         {/* Featured Projects */}
         <div className="space-y-16 mb-20">
           {featuredProjects.map((project, index) => (
-            <div 
-              key={index}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
-                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-              }`}
-            >
-              <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
-                <button onClick={() => openImage(project.image, project.title)} className="block w-full text-left">
-                  <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </button>
-              </div>
-              
-              <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
-                <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${
-                  isDarkMode ? 'text-white' : 'text-slate-900'
-                }`}>{project.title}</h3>
-                <p className={`mb-6 leading-relaxed ${
-                  isDarkMode ? 'text-gray-300' : 'text-slate-600'
-                }`}>{project.description}</p>
+            <Reveal key={index} delay={index * 150}>
+              <div 
+                className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
+                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                }`}
+              >
+                <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
+                  <button onClick={() => openImage(project.image, project.title)} className="block w-full text-left">
+                    <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </button>
+                </div>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                  <span 
-                      key={techIndex}
-                    className={`px-3 py-1 text-sm rounded-full font-medium ${
-                        isDarkMode 
-                          ? 'bg-sky-900/40 text-sky-300' 
-                          : 'bg-sky-100 text-sky-700'
-                      }`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
+                  <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${
+                    isDarkMode ? 'text-white' : 'text-slate-900'
+                  }`}>{project.title}</h3>
+                  <p className={`mb-6 leading-relaxed ${
+                    isDarkMode ? 'text-gray-300' : 'text-slate-600'
+                  }`}>{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech, techIndex) => (
+                    <span 
+                        key={techIndex}
+                      className={`px-3 py-1 text-sm rounded-full font-medium ${
+                          isDarkMode 
+                            ? 'bg-sky-900/40 text-sky-300' 
+                            : 'bg-sky-100 text-sky-700'
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
@@ -146,46 +152,47 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
           }`}>Other Projects</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherProjects.map((project, index) => (
-              <div 
-                key={index}
-                className={`rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                  isDarkMode ? 'bg-gray-800' : 'bg-slate-50'
-                }`}
-              >
-                <button onClick={() => openImage(project.image, project.title)} className="block w-full text-left">
-                  <div className="relative group overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </button>
-                
-                <div className="p-6">
-                  <h4 className={`text-xl font-bold mb-3 ${
-                    isDarkMode ? 'text-white' : 'text-slate-900'
-                  }`}>{project.title}</h4>
-                  <p className={`mb-4 leading-relaxed text-sm ${
-                    isDarkMode ? 'text-gray-300' : 'text-slate-600'
-                  }`}>{project.description}</p>
+              <Reveal key={index} delay={index * 100}>
+                <div 
+                  className={`rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                    isDarkMode ? 'bg-gray-800' : 'bg-slate-50'
+                  }`}
+                >
+                  <button onClick={() => openImage(project.image, project.title)} className="block w-full text-left">
+                    <div className="relative group overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  </button>
                   
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className={`px-2 py-1 text-xs rounded font-medium ${
-                          isDarkMode 
-                            ? 'bg-gray-700 text-gray-300' 
-                            : 'bg-white text-slate-600'
-                        }`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="p-6">
+                    <h4 className={`text-xl font-bold mb-3 ${
+                      isDarkMode ? 'text-white' : 'text-slate-900'
+                    }`}>{project.title}</h4>
+                    <p className={`mb-4 leading-relaxed text-sm ${
+                      isDarkMode ? 'text-gray-300' : 'text-slate-600'
+                    }`}>{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className={`px-2 py-1 text-xs rounded font-medium ${
+                            isDarkMode 
+                              ? 'bg-gray-700 text-gray-300' 
+                              : 'bg-white text-slate-600'
+                          }`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

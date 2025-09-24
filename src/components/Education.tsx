@@ -1,4 +1,5 @@
 import React from 'react';
+import Reveal from './Reveal';
 
 interface EducationProps {
   isDarkMode: boolean;
@@ -38,10 +39,14 @@ export default function Education({ isDarkMode }: EducationProps) {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
-            isDarkMode ? 'text-white' : 'text-gray-800'
-          }`}>Education</h2>
-          <div className="w-24 h-1 bg-sky-500 mx-auto mb-8"></div>
+          <Reveal>
+            <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
+              isDarkMode ? 'text-white' : 'text-gray-800'
+            }`}>Education</h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="w-24 h-1 bg-sky-500 mx-auto mb-8"></div>
+          </Reveal>
         </div>
 
         <div className="relative">
@@ -51,27 +56,29 @@ export default function Education({ isDarkMode }: EducationProps) {
           {/* Timeline Items */}
           <div className="space-y-16">
             {educationData.map((item, index) => (
-              <div key={index} className={`relative flex items-center ${item.side === 'left' ? 'justify-start' : 'justify-end'}`}> 
-                {/* Timeline Node */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-500 rounded-full z-10"></div>
-                
-                {/* Content Card */}
-                <div className={`w-full md:w-5/12 ${item.side === 'left' ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <div className={`rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                    isDarkMode ? 'bg-gray-900' : 'bg-white'
-                  }`}>
-                    <h3 className={`text-xl font-bold mb-2 ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
-                    }`}>{item.title}</h3>
-                    <p className={`font-medium mb-2 ${
-                      isDarkMode ? 'text-blue-400' : 'text-blue-600'
-                    }`}>{item.institution}</p>
-                    <p className={`text-sm mb-3 ${
-                      isDarkMode ? 'text-gray-400' : 'text-gray-500'
-                    }`}>{item.period}</p>
+              <Reveal key={index} delay={index * 150}>
+                <div className={`relative flex items-center ${item.side === 'left' ? 'justify-start' : 'justify-end'}`}> 
+                  {/* Timeline Node */}
+                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-500 rounded-full z-10"></div>
+                  
+                  {/* Content Card */}
+                  <div className={`w-full md:w-5/12 ${item.side === 'left' ? 'md:pr-8' : 'md:pl-8'}`}>
+                    <div className={`rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                      isDarkMode ? 'bg-gray-900' : 'bg-white'
+                    }`}>
+                      <h3 className={`text-xl font-bold mb-2 ${
+                        isDarkMode ? 'text-white' : 'text-gray-800'
+                      }`}>{item.title}</h3>
+                      <p className={`font-medium mb-2 ${
+                        isDarkMode ? 'text-blue-400' : 'text-blue-600'
+                      }`}>{item.institution}</p>
+                      <p className={`text-sm mb-3 ${
+                        isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                      }`}>{item.period}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

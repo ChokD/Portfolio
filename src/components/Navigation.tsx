@@ -55,13 +55,18 @@ export default function Navigation({ activeSection, isDarkMode, toggleDarkMode }
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-colors duration-200 hover:text-sky-600 ${
+                className={`relative transition-colors duration-200 hover:text-sky-600 ${
                   activeSection === item.href.slice(1) 
                     ? 'text-sky-600 font-medium' 
                     : isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}
               >
                 {item.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-sky-600 transition-all duration-300 ${
+                    activeSection === item.href.slice(1) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
               </button>
             ))}
             

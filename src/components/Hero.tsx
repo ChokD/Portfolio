@@ -26,7 +26,7 @@ export default function Hero({ isDarkMode }: HeroProps) {
       }`} style={{ animation: 'floatBlob 8s ease-in-out infinite' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* Left Section - Text and Buttons */}
           <div className="order-2 lg:order-1 space-y-6 md:space-y-8 max-w-xl" style={{ animation: 'floatY 6s ease-in-out infinite' }}>
             <div className="fade-in-up" style={{ animationDelay: '80ms' }}>
@@ -69,11 +69,11 @@ export default function Hero({ isDarkMode }: HeroProps) {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative" style={{ animation: 'floatY 7s ease-in-out infinite reverse' }}>
               <div className="absolute -inset-4 -z-10 rounded-full bg-gradient-to-tr from-sky-400/30 to-transparent blur-2xl" />
-              <div className="w-40 sm:w-48 md:w-56 lg:w-64 aspect-square rounded-full ring-4 ring-sky-400/40 shadow-xl overflow-hidden bg-white">
+              <div className="w-72 sm:w-80 md:w-96 lg:w-[30rem] aspect-square rounded-full ring-8 ring-sky-400/40 shadow-xl overflow-hidden bg-white transform -translate-y-2 md:-translate-y-4 lg:-translate-y-6">
                 <img 
-                  src="/images/thanarut.JPG" 
+                  src="/images/thanarut1.JPG" 
                   alt="Thanarut Rungruangwisetchai"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>

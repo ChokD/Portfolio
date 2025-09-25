@@ -10,22 +10,22 @@ export default function About({ isDarkMode }: AboutProps) {
     {
       icon: Code,
       title: "Full-Stack Development",
-      description: "Building robust web applications with modern technologies and best practices"
+      description: "Efficient web development"
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces that delight users"
+      description: "Creating user-friendly interfaces"
     },
     {
       icon: BookOpen,
       title: "Continuous Learning",
-      description: "Always eager to learn new technologies and improve my skills through practice and study"
+      description: "Eager to learn new technologies"
     },
     {
       icon: Users,
       title: "Collaboration",
-      description: "Working effectively in teams to deliver high-quality products on time"
+      description: "Effective team player"
     }
   ];
 

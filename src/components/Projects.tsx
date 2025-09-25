@@ -31,7 +31,7 @@ export default function Projects({ isDarkMode }: ProjectsProps) {
       title: "Kanji Game with AI",
       description: "A Kanji and Japanese script learning game built using Python and Tkinter. Features include multiple levels for Kanji, Hiragana, and Katakana, AI-generated hints using Gemini 1.5-flash, timed quizzes, score tracking, and interactive feedback. The game incorporates video and image elements, full-screen support, and user-friendly navigation to enhance learning and engagement.",
       image: "/images/KanjiGame.png",
-      technologies: ["Python","Google Gemini API","Tkinter"],
+      technologies: ["Python","Gemini API","Tkinter","AI Integration","GUI Development"],
       liveLink: "#",
       githubLink: "#",
       featured: true

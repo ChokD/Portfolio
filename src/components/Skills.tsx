@@ -33,25 +33,28 @@ export default function Skills({ isDarkMode }: SkillsProps) {
             }`}>Skills & Technologies</h2>
           </Reveal>
           <Reveal delay={120}>
-            <div className="w-24 h-1 bg-sky-500 mx-auto mb-8"></div>
+            <div className="w-28 h-1 bg-gradient-to-r from-sky-400 via-sky-500 to-sky-600 mx-auto mb-8 rounded"></div>
           </Reveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <Reveal key={categoryIndex} delay={categoryIndex * 120}>
-              <div className={`rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                isDarkMode ? 'bg-gray-800' : 'bg-white'
+              <div className={`rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ring-1 ${
+                isDarkMode ? 'bg-gray-800 ring-gray-700' : 'bg-white ring-slate-200'
               }`}>
-                <h3 className={`text-xl font-bold mb-6 ${
+                <h3 className={`text-xl font-bold mb-6 flex items-center gap-2 ${
                   isDarkMode ? 'text-white' : 'text-gray-800'
-                }`}>{category.title}</h3>
+                }`}>
+                  <span className="inline-block w-2 h-2 rounded-full bg-sky-500"></span>
+                  {category.title}
+                </h3>
                 
                 <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className="px-4 py-2 bg-gradient-to-r from-sky-400 to-sky-600 text-white rounded-full text-sm font-medium"
+                      className="px-3.5 py-2 bg-gradient-to-r from-sky-400 to-sky-600 text-white rounded-full text-sm font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-transform"
                     >
                       {skill}
                     </span>

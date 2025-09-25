@@ -1,4 +1,3 @@
-import React from 'react';
 import Reveal from './Reveal';
 import { Code, Palette, BookOpen, Users } from 'lucide-react';
 
@@ -35,7 +34,7 @@ export default function About({ isDarkMode }: AboutProps) {
       isDarkMode ? 'bg-gray-900' : 'bg-sky-50'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <Reveal>
             <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${
               isDarkMode ? 'text-white' : 'text-slate-900'
@@ -44,20 +43,38 @@ export default function About({ isDarkMode }: AboutProps) {
           <Reveal delay={100}>
             <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-sky-600 mx-auto mb-8"></div>
           </Reveal>
-          <Reveal delay={200}>
-            <p className={`text-base sm:text-lg font-semibold mb-6`}>
-              <span className="px-3 py-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
-                Thanarut Rungruangwisetchai
-              </span>
-            </p>
+        </div>
+
+        {/* Two-column content area */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
+          <Reveal>
+            <aside className={`${
+              isDarkMode ? 'bg-gray-800' : 'bg-white'
+            } rounded-2xl p-6 shadow-sm ring-1 ${isDarkMode ? 'ring-gray-700' : 'ring-slate-200'} h-full`}>
+              <div className="flex flex-col items-center justify-center text-center h-full gap-4">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-2 ring-sky-400/40 shadow-lg">
+                  <img src="/images/me0.png" alt="Thanarut" className="w-full h-full object-cover" />
+                </div>
+                <span className="px-3 py-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300 text-sm font-medium">Thanarut Rungruangwisetchai</span>
+              </div>
+            </aside>
           </Reveal>
-          <Reveal delay={300}>
-            <p className={`text-lg max-w-3xl mx-auto leading-relaxed ${
-              isDarkMode ? 'text-gray-300' : 'text-slate-600'
-            }`}>
-              I'm currently learning and building up my skills in web development, artificial intelligence, and UI/UX design. I enjoy creating projects that combine creativity with technology, and I’m always curious to explore new tools and ideas. I also value teamwork and collaboration, as I believe working with others helps me learn faster, share different perspectives, and build better solutions. My goal is to become a developer who can design solutions that are both functional and user-friendly. Outside of coding, I love learning about different cultures and finding inspiration from design and everyday life.
-            </p>
-          </Reveal>
+
+          <div className="md:col-span-2">
+            <Reveal delay={120}>
+              <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 lg:p-8 shadow-sm ring-1 ${isDarkMode ? 'ring-gray-700' : 'ring-slate-200'} h-full`}>
+                <p className={`text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-slate-600'}`}>
+                  I'm currently learning and building up my skills in web development, artificial intelligence, and UI/UX design. I enjoy exploring new tools and ideas, and I’m always curious to learn about things that spark my interest. I like exploring different areas of technology and discovering new concepts that expand my perspective.
+                </p>
+                <p className={`text-lg leading-relaxed mt-5 ${isDarkMode ? 'text-gray-300' : 'text-slate-600'}`}>
+                  I value teamwork and collaboration, as I believe working with others helps me learn faster, share different perspectives, and build better solutions. I like building projects that encourage collaboration and enjoy connecting with people, exchanging ideas, and learning from others’ experiences.
+                </p>
+                <p className={`text-lg leading-relaxed mt-5 ${isDarkMode ? 'text-gray-300' : 'text-slate-600'}`}>
+                  My goal is to become a developer who can design solutions that are both functional and user-friendly.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

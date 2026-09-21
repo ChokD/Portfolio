@@ -13,11 +13,11 @@ export default function Skills({ isDarkMode }: SkillsProps) {
     },
     {
       title: "Backend Development", 
-      skills: ["Node.js", "Python", "MySQL", "DB Browser"]
+      skills: ["PHP", "Laravel", "Node.js", "Python", "MySQL", "DB Browser"]
     },
     {
       title: "Tools & Others",
-      skills: ["Git/Github", "VS Code", "Figma", "Draw.io", "RapidMiner", "Power BI"]
+      skills: ["Git/Github", "Docker", "VS Code", "Figma", "Draw.io", "RapidMiner", "Power BI"]
     }
   ];
 

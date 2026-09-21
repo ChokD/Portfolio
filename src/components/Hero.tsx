@@ -15,7 +15,7 @@ export default function Hero({ isDarkMode }: HeroProps) {
   return (
     <section
       id="home"
-      className={`min-h-[80vh] md:min-h-screen flex items-center relative transition-colors duration-300 ${
+      className={`min-h-[80vh] md:min-h-screen flex items-center relative overflow-hidden transition-colors duration-300 ${
       isDarkMode 
         ? 'bg-gradient-to-r from-gray-900 to-gray-800' 
         : 'bg-gradient-to-r from-sky-50 to-white'
@@ -38,7 +38,7 @@ export default function Hero({ isDarkMode }: HeroProps) {
               <p className={`text-lg leading-relaxed max-w-lg ${
                 isDarkMode ? 'text-gray-300' : 'text-gray-600'
               }`}>
-                I'm currently learning and building up my skills in web development, artificial intelligence, and UI/UX design.
+                Recent Computer Science graduate with hands-on experience in full-stack web development through internship and academic projects. Skilled in React.js, JavaScript, PostgreSQL, PHP, Laravel and Docker, with experience in frontend, backend, and database development. Seeking a Full Stack Developer position to build high-quality software solutions while continuously growing my technical expertise.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default function Hero({ isDarkMode }: HeroProps) {
               <div className="absolute -inset-4 -z-10 rounded-full bg-gradient-to-tr from-sky-400/30 to-transparent blur-2xl" />
               <div className="w-72 sm:w-80 md:w-96 lg:w-[30rem] aspect-square rounded-full ring-8 ring-sky-400/40 shadow-xl overflow-hidden bg-white transform -translate-y-2 md:-translate-y-4 lg:-translate-y-6">
                 <img 
-                  src="/images/thanarut1.JPG" 
+                  src="/images/chokdee.png" 
                   alt="Thanarut Rungruangwisetchai"
                   className="w-full h-full object-cover object-top"
                 />

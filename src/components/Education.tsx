@@ -10,7 +10,7 @@ export default function Education({ isDarkMode }: EducationProps) {
     {
       title: "Bangkok University",
       institution: "Bachelor of Computer Science",
-      period: "2022 - present",
+      period: "2022 - 2026",
       side: "left"
     },
     {

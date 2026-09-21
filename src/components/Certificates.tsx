@@ -10,6 +10,12 @@ interface CertificatesProps {
 export default function Certificates({ isDarkMode }: CertificatesProps) {
   const certificates = [
     {
+      title: "AWS TECH ALLIANCE: BUILDING AND SCALING AGENTIC AI WORKFLOWS",
+      issuer: "AWS",
+      date: "Nov, 2025",
+      image: "/images/AWSCertificate-24_page-0001.jpg",
+    },
+    {
       title: "Introduction to Programming with Python",
       issuer: "Samsung",
       date: "Jul, 2025",
